@@ -9,6 +9,12 @@
     // Cache busting for mobile devices
     console.log('Product gallery script loaded - version 2.0');
     
+    // Visual test indicator
+    document.body.style.border = '3px solid red';
+    setTimeout(() => {
+      document.body.style.border = 'none';
+    }, 2000);
+    
     document.addEventListener("DOMContentLoaded", function() {
       const thumbs = document.querySelectorAll(".product-thumbs .thumb");
       const mainImage = document.querySelector(".product-main-image img");
