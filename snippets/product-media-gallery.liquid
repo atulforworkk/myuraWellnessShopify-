@@ -162,7 +162,8 @@
       
       // Find current image index
       function findCurrentImageIndex(imageSrc) {
-        return allProductImages.findIndex(img => img.src === imageSrc);
+        const index = allProductImages.findIndex(img => img.src === imageSrc);
+        return index >= 0 ? index : 0; // Default to 0 if not found
       }
       
       // Zoom overlay function with carousel
@@ -340,21 +341,29 @@
               startX = e.touches[0].clientX;
               startY = e.touches[0].clientY;
             } else if (e.touches.length === 2) {
-              // Pinch gesture
+              // Pinch gesture - stable setup
               const distance = Math.sqrt(
                 Math.pow(e.touches[0].clientX - e.touches[1].clientX, 2) +
                 Math.pow(e.touches[0].clientY - e.touches[1].clientY, 2)
               );
               initialDistance = distance;
+              
               // Reset pan position when starting pinch
               currentTranslateX = 0;
               currentTranslateY = 0;
+              
+              // Ensure stable transform origin
+              const zoomImg = overlay.querySelector('#zoom-carousel-image');
+              if (zoomImg) {
+                zoomImg.style.transformOrigin = 'center center';
+                zoomImg.style.transition = 'none';
+              }
             }
           });
           
           overlay.addEventListener('touchmove', function(e) {
             if (e.touches.length === 2) {
-              // Pinch zoom
+              // Pinch zoom - controlled and smooth
               e.preventDefault();
               const distance = Math.sqrt(
                 Math.pow(e.touches[0].clientX - e.touches[1].clientX, 2) +
@@ -362,12 +371,20 @@
               );
               
               if (initialDistance > 0) {
-                const scale = Math.max(1, Math.min(3, distance / initialDistance));
-                currentScale = scale;
+                // More controlled zoom with damping
+                const scaleFactor = distance / initialDistance;
+                const rawScale = Math.max(0.5, Math.min(5, scaleFactor));
+                
+                // Add damping to prevent extreme zoom
+                const damping = 0.3;
+                const scale = 1 + (rawScale - 1) * damping;
+                currentScale = Math.max(0.8, Math.min(3, scale));
                 
                 const zoomImg = overlay.querySelector('#zoom-carousel-image');
                 if (zoomImg) {
-                  zoomImg.style.transform = `scale(${scale}) translate(${currentTranslateX}px, ${currentTranslateY}px)`;
+                  // Center the zoom properly
+                  zoomImg.style.transformOrigin = 'center center';
+                  zoomImg.style.transform = `scale(${currentScale}) translate(${currentTranslateX}px, ${currentTranslateY}px)`;
                   zoomImg.style.transition = 'none';
                 }
               }
@@ -375,8 +392,8 @@
               // Pan when zoomed - with reduced sensitivity
               e.preventDefault();
               const touch = e.touches[0];
-              const deltaX = (touch.clientX - startX) * 0.5; // Reduce sensitivity by 50%
-              const deltaY = (touch.clientY - startY) * 0.5; // Reduce sensitivity by 50%
+              const deltaX = (touch.clientX - startX) * 0.6; // Slightly increased sensitivity
+              const deltaY = (touch.clientY - startY) * 0.6; // Slightly increased sensitivity
               
               // Constrain panning to keep image within bounds
               const maxTranslateX = (overlay.offsetWidth * (currentScale - 1)) / 2;
@@ -468,7 +485,14 @@
         
         zoomImg.src = image.src;
         zoomImg.alt = image.alt;
+        
+        // Ensure currentImageIndex is valid
+        if (currentImageIndex < 0) {
+          currentImageIndex = 0;
+        }
+        
         imageCounter.textContent = `${currentImageIndex + 1} / ${allProductImages.length}`;
+        console.log('Counter set to:', currentImageIndex + 1, '/', allProductImages.length);
         
         // Show/hide arrows based on image count
         if (allProductImages.length <= 1) {
