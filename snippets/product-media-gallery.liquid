@@ -6,6 +6,9 @@
 
 <div class="product-gallery">
   <script>
+    // Cache busting for mobile devices
+    console.log('Product gallery script loaded - version 2.0');
+    
     document.addEventListener("DOMContentLoaded", function() {
       const thumbs = document.querySelectorAll(".product-thumbs .thumb");
       const mainImage = document.querySelector(".product-main-image img");
@@ -49,12 +52,21 @@
         }
         
         // Mobile touch zoom - Enhanced version
-        let isMobile = window.innerWidth <= 768;
+        // More robust mobile detection
+        let isMobile = window.innerWidth <= 768 || 
+                      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                      ('ontouchstart' in window) ||
+                      (navigator.maxTouchPoints > 0);
         let isZoomed = false;
         let scale = 1;
         let startX, startY, currentX = 0, currentY = 0;
         let touchStartTime = 0;
         let touchMoved = false;
+        
+        // Debug mobile detection
+        console.log('Screen width:', window.innerWidth);
+        console.log('Is mobile:', isMobile);
+        console.log('User agent:', navigator.userAgent);
         
         // Add mobile-specific styles
         if (isMobile) {
@@ -97,7 +109,9 @@
         }
         
         mainImage.addEventListener('touchstart', function(e) {
+          console.log('Touch start detected', e.touches.length, 'touches');
           if (isMobile && e.touches.length === 1) {
+            console.log('Mobile touch start - setting up zoom');
             touchStartTime = Date.now();
             touchMoved = false;
             startX = e.touches[0].clientX;
@@ -509,7 +523,7 @@
       transform: translateY(0);
     }
     
-    /* Mobile: hide hint and add mobile zoom styles */
+    /* Mobile: hide hint and add mobile zoom styles - v2.0 */
     @media (max-width: 768px) {
       .product-main-image::after {
         display: none;
