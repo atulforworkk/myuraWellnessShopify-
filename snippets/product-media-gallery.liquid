@@ -80,6 +80,7 @@
           mainImage.style.userSelect = 'none';
           mainImage.style.webkitUserSelect = 'none';
           mainImage.style.webkitTouchCallout = 'none';
+          mainImage.style.cursor = 'zoom-in';
           
           // Add mobile zoom hint
           const mobileHint = document.createElement('div');
@@ -157,27 +158,10 @@
           if (isMobile && e.touches.length === 0) {
             const touchDuration = Date.now() - touchStartTime;
             
-            // If it was a quick tap (less than 300ms) and didn't move much, toggle zoom
+            // If it was a quick tap (less than 300ms) and didn't move much, open zoom overlay
             if (touchDuration < 300 && !touchMoved) {
-              if (!isZoomed) {
-                // Zoom in
-                scale = 1.8;
-                isZoomed = true;
-                this.style.transform = `scale(${scale})`;
-                this.style.cursor = 'grabbing';
-                this.style.zIndex = '10';
-                console.log('Mobile zoom activated');
-              } else {
-                // Zoom out
-                scale = 1;
-                isZoomed = false;
-                this.style.transform = 'scale(1) translate(0px, 0px)';
-                this.style.cursor = 'zoom-in';
-                this.style.zIndex = '1';
-                currentX = 0;
-                currentY = 0;
-                console.log('Mobile zoom deactivated');
-              }
+              console.log('Mobile tap detected - opening zoom overlay');
+              showZoomOverlay(this);
             }
           }
         });
@@ -561,20 +545,36 @@
       background: rgba(255, 255, 255, 1) !important;
     }
     
-    /* Mobile responsive arrows */
+    /* Mobile responsive arrows and overlay */
     @media (max-width: 768px) {
+      #zoom-overlay {
+        background: rgba(0, 0, 0, 0.98) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+      }
+      
       #zoom-overlay button {
-        width: 40px !important;
-        height: 40px !important;
-        font-size: 18px !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 20px !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border: 2px solid rgba(0, 0, 0, 0.1) !important;
       }
       
       #zoom-overlay button:first-of-type {
-        left: 10px !important;
+        left: 15px !important;
       }
       
       #zoom-overlay button:nth-of-type(2) {
-        right: 10px !important;
+        right: 15px !important;
+      }
+      
+      #zoom-carousel-image {
+        max-width: 90% !important;
+        max-height: 90% !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
       }
     }
     
