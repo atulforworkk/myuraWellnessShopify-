@@ -787,37 +787,6 @@
   
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const mainImage = document.getElementById("main-product-image");
-
-  if (window.innerWidth <= 768) { // only for mobile
-    let zoomed = false;
-    let startX, startY, x = 0, y = 0;
-
-    mainImage.addEventListener("touchstart", function (e) {
-      if (!zoomed) {
-        mainImage.style.transform = "scale(2)";
-        zoomed = true;
-        mainImage.style.cursor = "grabbing";
-        startX = e.touches[0].clientX - x;
-        startY = e.touches[0].clientY - y;
-      } else {
-        mainImage.style.transform = "scale(1) translate(0px, 0px)";
-        zoomed = false;
-        x = 0;
-        y = 0;
-        mainImage.style.cursor = "grab";
-      }
-    });
-
-    mainImage.addEventListener("touchmove", function (e) {
-      if (zoomed) {
-        e.preventDefault(); // prevent scrolling while dragging
-        x = e.touches[0].clientX - startX;
-        y = e.touches[0].clientY - startY;
-        mainImage.style.transform = `scale(2) translate(${x}px, ${y}px)`;
-      }
-    });
-  }
 });
 </script>
 
