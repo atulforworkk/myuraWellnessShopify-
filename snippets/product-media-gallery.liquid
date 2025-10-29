@@ -48,48 +48,119 @@
           });
         }
         
-        // Mobile touch zoom
-        if (window.innerWidth <= 768) {
-          let isZoomed = false;
-          let scale = 1;
-          let startX, startY, currentX = 0, currentY = 0;
+        // Mobile touch zoom - Enhanced version
+        let isMobile = window.innerWidth <= 768;
+        let isZoomed = false;
+        let scale = 1;
+        let startX, startY, currentX = 0, currentY = 0;
+        let touchStartTime = 0;
+        let touchMoved = false;
+        
+        // Add mobile-specific styles
+        if (isMobile) {
+          mainImage.style.touchAction = 'none';
+          mainImage.style.userSelect = 'none';
+          mainImage.style.webkitUserSelect = 'none';
+          mainImage.style.webkitTouchCallout = 'none';
           
-          mainImage.addEventListener('touchstart', function(e) {
-            if (e.touches.length === 1) {
+          // Add mobile zoom hint
+          const mobileHint = document.createElement('div');
+          mobileHint.innerHTML = 'Tap to zoom';
+          mobileHint.style.cssText = `
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            z-index: 5;
+            pointer-events: none;
+            opacity: 0.8;
+          `;
+          mainImage.parentElement.style.position = 'relative';
+          mainImage.parentElement.appendChild(mobileHint);
+          
+          // Hide hint after 3 seconds
+          setTimeout(() => {
+            if (mobileHint.parentElement) {
+              mobileHint.style.opacity = '0';
+              mobileHint.style.transition = 'opacity 0.5s ease';
+              setTimeout(() => {
+                if (mobileHint.parentElement) {
+                  mobileHint.parentElement.removeChild(mobileHint);
+                }
+              }, 500);
+            }
+          }, 3000);
+        }
+        
+        mainImage.addEventListener('touchstart', function(e) {
+          if (isMobile && e.touches.length === 1) {
+            touchStartTime = Date.now();
+            touchMoved = false;
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+          }
+        });
+        
+        mainImage.addEventListener('touchmove', function(e) {
+          if (isMobile && e.touches.length === 1) {
+            const currentX = e.touches[0].clientX;
+            const currentY = e.touches[0].clientY;
+            const deltaX = Math.abs(currentX - startX);
+            const deltaY = Math.abs(currentY - startY);
+            
+            // If moved more than 10px, it's a swipe/pan
+            if (deltaX > 10 || deltaY > 10) {
+              touchMoved = true;
+              
+              if (isZoomed) {
+                e.preventDefault();
+                const moveX = currentX - startX;
+                const moveY = currentY - startY;
+                
+                // Constrain panning
+                const maxX = (this.offsetWidth * (scale - 1)) / 2;
+                const maxY = (this.offsetHeight * (scale - 1)) / 2;
+                const constrainedX = Math.max(-maxX, Math.min(maxX, moveX));
+                const constrainedY = Math.max(-maxY, Math.min(maxY, moveY));
+                
+                this.style.transform = `scale(${scale}) translate(${constrainedX}px, ${constrainedY}px)`;
+              }
+            }
+          }
+        });
+        
+        mainImage.addEventListener('touchend', function(e) {
+          if (isMobile && e.touches.length === 0) {
+            const touchDuration = Date.now() - touchStartTime;
+            
+            // If it was a quick tap (less than 300ms) and didn't move much, toggle zoom
+            if (touchDuration < 300 && !touchMoved) {
               if (!isZoomed) {
+                // Zoom in
                 scale = 1.8;
                 isZoomed = true;
                 this.style.transform = `scale(${scale})`;
                 this.style.cursor = 'grabbing';
-                startX = e.touches[0].clientX - currentX;
-                startY = e.touches[0].clientY - currentY;
+                this.style.zIndex = '10';
+                console.log('Mobile zoom activated');
               } else {
+                // Zoom out
                 scale = 1;
                 isZoomed = false;
                 this.style.transform = 'scale(1) translate(0px, 0px)';
                 this.style.cursor = 'zoom-in';
+                this.style.zIndex = '1';
                 currentX = 0;
                 currentY = 0;
+                console.log('Mobile zoom deactivated');
               }
             }
-          });
-          
-          mainImage.addEventListener('touchmove', function(e) {
-            if (isZoomed) {
-              e.preventDefault();
-              currentX = e.touches[0].clientX - startX;
-              currentY = e.touches[0].clientY - startY;
-              
-              // Constrain panning
-              const maxX = (this.offsetWidth * (scale - 1)) / 2;
-              const maxY = (this.offsetHeight * (scale - 1)) / 2;
-              currentX = Math.max(-maxX, Math.min(maxX, currentX));
-              currentY = Math.max(-maxY, Math.min(maxY, currentY));
-              
-              this.style.transform = `scale(${scale}) translate(${currentX}px, ${currentY}px)`;
-            }
-          });
-        }
+          }
+        });
       }
       
       // Carousel data
@@ -438,10 +509,28 @@
       transform: translateY(0);
     }
     
-    /* Mobile: hide hint */
+    /* Mobile: hide hint and add mobile zoom styles */
     @media (max-width: 768px) {
       .product-main-image::after {
         display: none;
+      }
+      
+      .product-main-image {
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .product-main-image img {
+        transition: transform 0.3s ease;
+        will-change: transform;
+        touch-action: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+      }
+      
+      .product-main-image img:active {
+        cursor: grabbing;
       }
     }
     
