@@ -372,11 +372,11 @@
                 }
               }
             } else if (e.touches.length === 1 && currentScale > 1.1) {
-              // Pan when zoomed
+              // Pan when zoomed - with reduced sensitivity
               e.preventDefault();
               const touch = e.touches[0];
-              const deltaX = touch.clientX - startX;
-              const deltaY = touch.clientY - startY;
+              const deltaX = (touch.clientX - startX) * 0.5; // Reduce sensitivity by 50%
+              const deltaY = (touch.clientY - startY) * 0.5; // Reduce sensitivity by 50%
               
               // Constrain panning to keep image within bounds
               const maxTranslateX = (overlay.offsetWidth * (currentScale - 1)) / 2;
