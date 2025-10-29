@@ -1,0 +1,124 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_YN399c": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- HERO SLIDER -->\n<div class=\"hero-slider\" id=\"heroSlider\">\n  <!-- Desktop Slides -->\n  <div class=\"slide desktop-slide active\">\n    <img src=\"{{ 'ComingSoon.jpg' | asset_url }}\" alt=\"Desktop Slide 1\">\n  </div>\n  <!--  -->\n  <div class=\"slide desktop-slide\">\n    <img src=\"{{ 'Banner1Main.png' | asset_url }}\" alt=\"Desktop Slide 2\">\n  </div>\n  <div class=\"slide desktop-slide\">\n    <img src=\"{{ 'Banner 5.jpg' | asset_url }}\" alt=\"Desktop Slide 3\">\n  </div>\n\n  <!-- Navigation Buttons -->\n  <button class=\"hero-prev\">&#10094;</button>\n  <button class=\"hero-next\">&#10095;</button>\n\n  <!-- Mobile Slider (Swiper) -->\n  <div class=\"mobile-slider swiper\">\n    <div class=\"swiper-wrapper\">\n      <div class=\"swiper-slide\">\n        <img src=\"{{ 'website banner vertical.jpg'| asset_url }}\" alt=\"Mobile Slide 1\">\n      </div>\n      <div class=\"swiper-slide\">\n        <img src=\"{{ 'Banner12.jpg' | asset_url }}\" alt=\"Mobile Slide 2\">\n      </div>\n      <div class=\"swiper-slide\">\n        <img src=\"{{ 'Banner13.jpg' | asset_url }}\" alt=\"Mobile Slide 3\">\n      </div>\n    </div>\n    <!-- optional pagination -->\n    <div class=\"swiper-pagination\"></div>\n  </div>\n</div>\n\n<!-- Swiper CSS & JS -->\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css\">\n<script src=\"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js\"></script>\n\n<style>\n.hero-slider {\n  position: relative;\n  width: 100%;\n  aspect-ratio: 1500/625;\n  margin: 0 auto;\n  overflow: hidden;\n  border-radius: 12px;\n  background: #F0F4EB;\n}\n\n/* Desktop slides */\n.hero-slider .slide {\n  position: absolute;\n  inset: 0;\n  opacity: 0;\n  transition: opacity 1s ease-in-out;\n}\n\n.hero-slider .slide img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n}\n\n.hero-slider .slide.active {\n  opacity: 1;\n}\n\n/* Navigation Buttons */\n.hero-prev, .hero-next {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  background: rgba(0,0,0,0.4);\n  color: white;\n  border: none;\n  padding: 12px 18px;\n  font-size: 24px;\n  border-radius: 50%;\n  cursor: pointer;\n  z-index: 10;\n  transition: background 0.3s;\n}\n\n.hero-prev:hover, .hero-next:hover {\n  background: rgba(0,0,0,0.6);\n}\n\n.hero-prev { left: 20px; }\n.hero-next { right: 20px; }\n\n/* Desktop only */\n@media (min-width: 769px) {\n  .mobile-slider { display: none; }\n  .desktop-slide { display: block; }\n}\n\n/* Mobile only (Swiper carousel) */\n@media (max-width: 768px) {\n  .hero-slider {\n    aspect-ratio: auto;\n    border-radius: 8px;\n  }\n\n  .desktop-slide, .hero-prev, .hero-next { display: none; }\n\n  .mobile-slider { display: block; }\n\n  .mobile-slider img {\n    width: 100%;\n    height: auto;\n    object-fit: contain;\n    background-color: #F0F4EB;\n    border-radius: 8px;\n  }\n\n  .swiper-pagination-bullet {\n    background: #333;\n    opacity: .6;\n  }\n  .swiper-pagination-bullet-active {\n    background: #000;\n    opacity: 1;\n  }\n}\n</style>\n\n<script>\ndocument.addEventListener('DOMContentLoaded', function() {\n  // Desktop slider manual + auto logic\n  const slides = document.querySelectorAll('.hero-slider .desktop-slide');\n  const nextBtn = document.querySelector('.hero-next');\n  const prevBtn = document.querySelector('.hero-prev');\n  let current = 0;\n  let autoPlay;\n\n  function showSlide(index) {\n    slides.forEach((slide, i) => slide.classList.toggle('active', i === index));\n  }\n\n  function nextSlide() {\n    current = (current + 1) % slides.length;\n    showSlide(current);\n  }\n\n  function prevSlide() {\n    current = (current - 1 + slides.length) % slides.length;\n    showSlide(current);\n  }\n\n  nextBtn.addEventListener('click', () => {\n    nextSlide();\n    resetAutoPlay();\n  });\n\n  prevBtn.addEventListener('click', () => {\n    prevSlide();\n    resetAutoPlay();\n  });\n\n  function startAutoPlay() {\n    autoPlay = setInterval(nextSlide, 7000); // auto crossfade every 7s\n  }\n\n  function resetAutoPlay() {\n    clearInterval(autoPlay);\n    startAutoPlay();\n  }\n\n  showSlide(current);\n  startAutoPlay();\n\n  // Mobile Swiper\n  if (window.innerWidth <= 768) {\n    new Swiper('.mobile-slider', {\n      slidesPerView: 1,\n      loop: true,\n      autoplay: {\n        delay: 5000,\n        disableOnInteraction: false,\n      },\n      pagination: {\n        el: '.swiper-pagination',\n        clickable: true,\n      },\n      navigation: {\n        nextEl: '.hero-next',\n        prevEl: '.hero-prev',\n      },\n    });\n  }\n});\n</script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "new-featured-collection",
+        "products_to_show": 6,
+        "title": "Featured Products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 56,
+        "padding_bottom": 32
+      }
+    },
+    "video_RfiHMC": {
+      "type": "video",
+      "disabled": true,
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/AWde6DqZ9Rc?si=gCgAKsNR4zd-bbA_",
+        "cover_image": "shopify://shop_images/AWde6DqZ9Rc-HD.jpg",
+        "description": "About Mayur Wellness",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_hMtVz8": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div \n  style=\"position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;\"\n  data-aos=\"fade-up\"\n  data-aos-duration=\"1000\"\n  data-aos-delay=\"200\"\n  data-aos-offset=\"200\"\n>\n  <iframe \n    src=\"https://www.youtube.com/embed/AWde6DqZ9Rc?rel=0&modestbranding=1&showinfo=0\" \n    title=\"YouTube video player\" \n    style=\"position: absolute; top: 50%; left: 50%; width: 80%; height: 80%; transform: translate(-50%, -50%);\" \n    frameborder=\"0\" \n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" \n    allowfullscreen>\n  </iframe>\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_GjHRrb": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n.custom-delivery-section {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n  gap: 2rem;\n  border-radius: 16px;\n  padding: 2rem 1.5rem;\n  margin: 0 auto;\n  width: 80%;\n  max-width: 1200px;\n}\n\n/* IMAGE */\n.custom-delivery-image {\n  flex: 1 1 45%;\n  display: flex;\n  justify-content: center;\n}\n.custom-delivery-image img {\n  width: 100%;\n  max-width: 420px;\n  height: auto;\n  border-radius: 12px;\n  display: block;\n}\n\n/* CONTENT */\n.custom-delivery-content {\n  flex: 1 1 45%;\n  color: #3b3b3b;\n}\n.custom-delivery-content h5 {\n  color: #7b8b6f;\n  letter-spacing: 0.3px;\n  margin-bottom: 0.5rem;\n}\n.custom-delivery-content h2 {\n  font-size: 3rem;\n  font-weight: 700;\n  color: #2d2d2d;\n  margin-bottom: 1rem;\n  line-height: 1.3;\n}\n.custom-delivery-content h2 span {\n  display: block;\n  color: #5c7c58;\n}\n.custom-delivery-content p {\n  font-size: 1.7rem;\n  line-height: 1.6;\n  margin-bottom: 1rem;\n  color: #444;\n}\n.custom-delivery-button {\n  display: inline-block;\n  background-color: #3c6845;\n  color: #fff;\n  padding: 0.8rem 1.8rem;\n  border-radius: 8px;\n  text-decoration: none;\n  font-weight: 600;\n  transition: background-color 0.3s ease;\n}\n.custom-delivery-button:hover {\n  background-color: #2b5233;\n}\n\n/* RESPONSIVE DESIGN */\n@media (max-width: 992px) {\n  .custom-delivery-content h2 { font-size: 2.2rem; }\n  .custom-delivery-content p { font-size: 1.5rem; }\n}\n@media (max-width: 768px) {\n  .custom-delivery-section {\n    flex-direction: column;\n    text-align: center;\n    padding: 1.5rem 1rem;\n  }\n  .custom-delivery-image { flex: 1 1 100%; margin-bottom: 1rem; }\n  .custom-delivery-content { flex: 1 1 100%; }\n  .custom-delivery-content h2 { font-size: 2rem; }\n  .custom-delivery-content p { font-size: 1rem; }\n  .custom-delivery-button {\n    width: 100%;\n    padding: 1rem;\n    font-size: 1rem;\n  }\n}\n@media (max-width: 480px) {\n  .custom-delivery-section { padding: 1.2rem 1rem; }\n  .custom-delivery-content h2 { font-size: 1.7rem; }\n  .custom-delivery-content p { font-size: 0.95rem; }\n  .custom-delivery-button { font-size: 0.95rem; }\n}\n</style>\n\n<section class=\"custom-delivery-section\" data-aos=\"fade-up\" data-aos-duration=\"1000\">\n  <div class=\"custom-delivery-image\" data-aos=\"fade-right\" data-aos-duration=\"1200\">\n    <img src=\"{{ 'HomePageImage.png' | asset_url }}\" alt=\"Myura Wellness Delivery\">\n  </div>\n\n  <div class=\"custom-delivery-content\" data-aos=\"fade-left\" data-aos-duration=\"1200\">\n    <h5 data-aos=\"fade-up\" data-aos-delay=\"100\">Discover now Magical Benefits of nature.</h5>\n    <h2 data-aos=\"fade-up\" data-aos-delay=\"200\">Your best health is waiting<br>- are you?</h2>\n    <p data-aos=\"fade-up\" data-aos-delay=\"300\">\n      Discover the pure power of nature with MYURA – where ancient Ayurvedic wisdom fuses with modern science to create wellness that works.\n      Wake up energized, feel balanced, and stay unstoppable all day.\n      Our potent botanical blends naturally detoxify, boost vitality, balance hormones, aid digestion, and strengthen joints – so you can feel light, clear, and alive from the inside out.\n    </p>\n    <p data-aos=\"fade-up\" data-aos-delay=\"400\">\n      Every single ingredient is clean, transparent, and purpose-driven – no fillers, no gimmicks, just results you can feel.\n    </p>\n    <a href=\"/collections/all\" class=\"custom-delivery-button\" data-aos=\"zoom-in\" data-aos-delay=\"500\">Explore Now</a>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "video_9haGap": {
+      "type": "video",
+      "disabled": true,
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=tkZfN6ZPuBo",
+        "cover_image": "shopify://shop_images/tkZfN6ZPuBo-HD.jpg",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_rhEyEq": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div \n  style=\"position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 0; width: 100%; max-width: 100%;\"\n  data-aos=\"fade-up\"\n  data-aos-duration=\"1000\"\n  data-aos-delay=\"200\"\n  data-aos-offset=\"200\"\n>\n  <iframe \n    src=\"https://www.youtube.com/embed/tkZfN6ZPuBo?rel=0&modestbranding=1&showinfo=0\" \n    title=\"YouTube video player\" \n    style=\"position: absolute; top: 50%; left: 50%; width: 80%; height: 70%; transform: translate(-50%, -50%); border: none; display: block;\" \n    frameborder=\"0\" \n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" \n    allowfullscreen>\n  </iframe>\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_YN399c",
+    "featured-collection",
+    "video_RfiHMC",
+    "custom_liquid_hMtVz8",
+    "custom_liquid_GjHRrb",
+    "video_9haGap",
+    "custom_liquid_rhEyEq"
+  ]
+}

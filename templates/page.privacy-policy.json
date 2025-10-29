@@ -1,0 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "slideshow_aKYAf4": {
+      "type": "slideshow",
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "custom_liquid_4tiYVr": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"legal-wrapper\">\n  <div class=\"legal-card\">\n    <h1>Privacy Policy – MYURA</h1>\n    <div class=\"legal-page\">\n      <h2>Collection of Information</h2>\n      <h3>Information You Provide to Us</h3>\n      <p>We collect the information you directly provide to us, such as when you create or update your account, subscribe to wellness services, contact customer support, or communicate with us in any other way...</p>\n\n      <h3>Information We Collect Through Use of Our Services</h3>\n      <ul>\n        <li><strong>Location Information:</strong> With your permission, we collect accurate location data...</li>\n        <li><strong>Contacts Information:</strong> With your consent, we may access your contact list...</li>\n        <li><strong>Transaction Information:</strong> We store your transaction history...</li>\n        <li><strong>Usage and Preference Information:</strong> We collect data on how you interact...</li>\n        <li><strong>Device Information:</strong> We collect details such as device model...</li>\n        <li><strong>Call and SMS Data:</strong> If you interact with MYURA’s customer care...</li>\n        <li><strong>Log Information:</strong> Server logs may include IP address...</li>\n      </ul>\n\n      <h2>Use of Information</h2>\n      <p>The data collected helps us deliver, personalize, and improve our wellness solutions...</p>\n\n      <h2>Sharing of Information</h2>\n      <p>We may share your information under the following circumstances:</p>\n      <ul>\n        <li><strong>Through Our Services:</strong> With partners or collaborators...</li>\n        <li><strong>Other Important Sharing:</strong> With affiliates, vendors, in compliance with legal obligations, or in anonymized form...</li>\n      </ul>\n\n      <h2>Chatbot Services</h2>\n      <p>MYURA may partner with third-party AI chatbot platforms (e.g., Haptik, Freshchat)...</p>\n\n      <h2>Social Sharing</h2>\n      <p>You may choose to link or share MYURA experiences via social media...</p>\n\n      <h2>Promotional Offers</h2>\n      <p>Discounts or promotional codes may be restricted to specific MYURA wellness categories...</p>\n\n      <h2>Failed Transactions</h2>\n      <p>Failed payments or errors will be logged in your account history for up to 30 days...</p>\n\n      <h2>Analytics & Advertising</h2>\n      <p>We may allow analytics providers to evaluate the effectiveness of our ads...</p>\n\n      <h2>Your Choices</h2>\n      <ul>\n        <li><strong>Account Access:</strong> You may update your MYURA profile...</li>\n        <li><strong>Access Rights:</strong> You can email us at <a href=\"mailto:care@myurawellness.in\">care@myurawellness.in</a>...</li>\n        <li><strong>Location & Contact Permissions:</strong> You can revoke permissions...</li>\n        <li><strong>Promotional Communications:</strong> You may opt out of promotional emails...</li>\n        <li><strong>WhatsApp Messages:</strong> By accepting our terms, you allow MYURA to share tips...</li>\n      </ul>\n\n      <h2>Policy Updates</h2>\n      <p>MYURA may periodically update this policy. If significant changes are made, we will notify you through our platform or via email. Continued use of our services constitutes your consent to such updates.</p>\n      <p><strong>If you have questions or concerns, reach out to us at:care@myurawellness.com      </strong></p>\n    </div>\n  </div>\n</div>\n\n<style>\n.legal-wrapper {\n  display: flex;\n  justify-content: center;\n  padding: 40px 15px;\n}\n\n.legal-card {\n  max-width: 900px;\n  width: 100%;\n  background: #fff;\n  border-radius: 12px;\n  box-shadow: 0 4px 15px rgba(0,0,0,0.08);\n  padding: 40px 30px;\n}\n\n.legal-card h1 {\n  font-size: 28px;\n  font-weight: 700;\n  margin: 40px 0 28px;\n  color: #235C42;\n  text-align: left;\n}\n\n.legal-page h2 {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 32px 0 14px;\n  color: #34495e;\n  text-align: left;\n}\n\n.legal-page h3 {\n  font-size: 17px;\n  font-weight: 600;\n  margin: 22px 0 10px;\n  color: #2d3e50;\n  text-align: left;\n}\n\n.legal-page p {\n  font-size: 16px;\n  color: #333;\n  line-height: 1.7;\n  margin-bottom: 18px;\n  text-align: left;\n}\n\n.legal-page ul {\n  margin: 0 0 20px;\n  padding-left: 1.2em;\n}\n\n.legal-page li {\n  margin-bottom: 8px;\n}\n\n.legal-page a {\n  color: #235C42;\n  text-decoration: none;\n}\n\n.legal-page a:hover {\n  text-decoration: underline;\n}\n\n.legal-page .closing {\n  margin-top: 28px;\n  font-weight: 500;\n  font-style: italic;\n  color: #555;\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_aKYAf4",
+    "custom_liquid_4tiYVr"
+  ]
+}

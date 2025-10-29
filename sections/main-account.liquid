@@ -1,0 +1,272 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  /* 🔹 Account Page Styling */
+  .account-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .account-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #235C42;
+  }
+
+  .account-header a {
+    font-size: 14px;
+    color: #235C42;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+  }
+
+  .account-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  .account-card h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #235C42;
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 8px;
+  }
+
+  /* 🔹 Order History Table */
+  .order-history {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .order-history th,
+  .order-history td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+  }
+
+  .order-history th {
+    background: #f9fafb;
+    font-weight: 600;
+  }
+
+  .order-history a {
+    color: #235C42;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  /* 🔹 Mobile Responsive Table */
+  @media screen and (max-width: 749px) {
+    .order-history thead {
+      display: none;
+    }
+
+    .order-history tr {
+      display: block;
+      margin-bottom: 15px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .order-history td {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border: none;
+    }
+
+    .order-history td::before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: #235C42;
+      flex-basis: 50%;
+      text-align: left;
+    }
+
+    .order-history td:last-child {
+      font-weight: 600;
+      color: #111;
+    }
+  }
+
+  .account-details p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #333;
+  }
+
+  .account-details a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #235C42;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+{%- endstyle -%}
+
+<div class="customer account section-{{ section.id }}-padding account-page">
+
+  <!-- Header -->
+  <div class="account-header">
+    <h1>{{ 'customer.account.title' | t }}</h1>
+    <a href="{{ routes.account_logout_url }}">
+      <span class="svg-wrapper">
+        {{- 'icon-account.svg' | inline_asset_content -}}
+      </span>
+      {{ 'customer.log_out' | t }}
+    </a>
+  </div>
+
+  <!-- Order History -->
+  <div class="account-card">
+    <div class="account-tabs">
+  <a href="/account" class="tab-link {% if request.path == '/account' %}active{% endif %}">Orders</a>
+  <a href="/pages/return-request" class="tab-link {% if request.path contains 'return-request' %}active{% endif %}">Returns</a>
+  <a href="{{ routes.account_addresses_url }}" class="tab-link {% if request.path contains 'addresses' %}active{% endif %}">Account Details</a>
+</div>
+    <h2>{{ 'customer.orders.title' | t }}</h2>
+
+    {% paginate customer.orders by 20 %}
+      {%- if customer.orders.size > 0 -%}
+        <table role="table" class="order-history">
+          <caption class="visually-hidden">{{ 'customer.orders.title' | t }}</caption>
+          <thead>
+            <tr>
+              <th scope="col">{{ 'customer.orders.order_number' | t }}</th>
+              <th scope="col">{{ 'customer.orders.date' | t }}</th>
+              <th scope="col">{{ 'customer.orders.payment_status' | t }}</th>
+              <th scope="col">{{ 'customer.orders.fulfillment_status' | t }}</th>
+              <th scope="col">{{ 'customer.orders.total' | t }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for order in customer.orders -%}
+              <tr>
+                <td data-label="{{ 'customer.orders.order_number' | t }}">
+                  <a href="{{ order.customer_url }}">{{ order.name }}</a>
+                </td>
+                <td data-label="{{ 'customer.orders.date' | t }}">
+                  {{ order.created_at | time_tag: format: 'date' }}
+                </td>
+                <td data-label="{{ 'customer.orders.payment_status' | t }}">
+                  {{ order.financial_status_label }}
+                </td>
+                <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">
+                  {{ order.fulfillment_status_label }}
+                </td>
+                <td data-label="{{ 'customer.orders.total' | t }}">
+                  {{ order.total_net_amount | money_with_currency }}
+                </td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+      {%- else -%}
+        <p>{{ 'customer.orders.none' | t }}</p>
+      {%- endif -%}
+
+      {%- if paginate.pages > 1 and paginate.parts.size > 0 -%}
+        <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+          <ul role="list">
+            {%- if paginate.previous -%}
+              <li><a href="{{ paginate.previous.url }}">{{ 'general.pagination.previous' | t }}</a></li>
+            {%- endif -%}
+            {%- for part in paginate.parts -%}
+              <li>
+                {%- if part.is_link -%}
+                  <a href="{{ part.url }}">{{ part.title }}</a>
+                {%- else -%}
+                  <span {% if part.title == paginate.current_page %}aria-current="page"{% endif %}>{{ part.title }}</span>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+            {%- if paginate.next -%}
+              <li><a href="{{ paginate.next.url }}">{{ 'general.pagination.next' | t }}</a></li>
+            {%- endif -%}
+          </ul>
+        </nav>
+      {%- endif -%}
+    {% endpaginate %}
+  </div>
+
+  <!-- Account Details -->
+  <div class="account-card account-details">
+    <h2>{{ 'customer.account.details' | t }}</h2>
+    {{ customer.default_address | format_address }}
+    {% comment %}
+    canbechanged 
+    <a href="{{ routes.account_addresses_url }}">
+      {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+    </a>
+ {% endcomment %}
+
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-account.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

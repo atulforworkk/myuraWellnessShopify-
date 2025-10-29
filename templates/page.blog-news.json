@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_7gKUgL": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- Radiant Gradient Footer -->\n<footer class=\"gradient-footer\">\n  <div class=\"footer-center\">\n    <h2>Blog </h2>\n    <p>Because your wellness deserve more than maintenance .</p>\n    <p>--It deserve transformation</p>\n  </div>\n</footer>\n\n<style>\n.gradient-footer {\n  background: linear-gradient(135deg, #8cb697, #5c7f6f); /* Same radiant green gradient */\n  color: #fff;\n  text-align: center;\n  padding: 80px 20px;\n  font-family: 'Arial', sans-serif;\n}\n\n.gradient-footer h2 {\n  font-size: 36px;\n  font-weight: 700;\n  margin-bottom: 10px;\n  color: #fff; /* Ensures CONTACT is white */\n}\n\n.gradient-footer p {\n  font-size: 18px;\n  font-weight: 400;\n  opacity: 0.9;\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_blog_W7WPcQ": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "myura-wellness",
+        "post_limit": 3,
+        "heading": "",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_blog_4mXkCU": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "all-about-our-products-and-reviews",
+        "post_limit": 3,
+        "heading": "",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_7gKUgL",
+    "main",
+    "featured_blog_W7WPcQ",
+    "featured_blog_4mXkCU"
+  ]
+}

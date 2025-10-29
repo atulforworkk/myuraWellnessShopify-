@@ -1,0 +1,223 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_7gKUgL": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- Radiant Gradient Footer -->\n<footer class=\"gradient-footer\">\n  <div class=\"footer-center\">\n    <h2>Frequently Asked Questions</h2>\n    <p>Because your wellness deserve more than maintenance .</p>\n    <p>--It deserve transformation</p>\n  </div>\n</footer>\n\n<style>\n.gradient-footer {\n  background: linear-gradient(135deg, #8cb697, #5c7f6f); /* Same radiant green gradient */\n  color: #fff;\n  text-align: center;\n  padding: 80px 20px;\n  font-family: 'Arial', sans-serif;\n}\n\n.gradient-footer h2 {\n  font-size: 36px;\n  font-weight: 700;\n  margin-bottom: 10px;\n  color: #fff; /* Ensures CONTACT is white */\n}\n\n.gradient-footer p {\n  font-size: 18px;\n  font-weight: 400;\n  opacity: 0.9;\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collapsible_content_geGJkC": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_NPzdPp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I log in to my Myura Wellness account?",
+            "icon": "check_mark",
+            "row_content": "<p><em> You can log in by clicking the profile icon on the top-right corner and entering your registered email and password.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_QYT3yK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I forgot my password. How can I reset it?",
+            "icon": "check_mark",
+            "row_content": "<p><em> Click on “Forgot Password” on the login page and follow the steps to reset it via your email.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_VUxqEi": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What products does Myura Wellness offer?",
+            "icon": "check_mark",
+            "row_content": "<p><em> We offer a curated range of Ayurvedic wellness solutions including multivitamins, digestive support, men’s & women’s health boosters, plant-based Omega-3, and more. See Full Product Range</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_N4zDNd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are Myura’s products suitable for vegetarians or vegans?",
+            "icon": "check_mark",
+            "row_content": "<p><em> Yes, most of our products are 100% vegetarian and plant-based. Please check individual product pages for specifics.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zJEATN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I find the ingredients used in Myura’s products?",
+            "icon": "check_mark",
+            "row_content": "<p><em> You can visit the specific product page and click on the Ingredients section to view the full list.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_i4gFPN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I check the status of my order?",
+            "icon": "check_mark",
+            "row_content": "<p><em> After placing an order, you can track it from your My Orders section under your account dashboard.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_F7d849": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I know if my order is confirmed?",
+            "icon": "check_mark",
+            "row_content": "<p><em>Once your order is placed, you’ll receive a confirmation email and SMS with your order details.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gUJrHP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I modify or cancel my order after placing it?",
+            "icon": "check_mark",
+            "row_content": "<p><em> You can request modifications or cancellations within 2 hours of placing your order by contacting our support team at </em><em><strong>care@myura.com</strong></em><em>.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pQ9JEX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the estimated time of delivery ?",
+            "icon": "check_mark",
+            "row_content": "<p><em>Orders are typically delivered within 3–7 working days, depending on your location.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UrECPr": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if my package is delayed or not delivered?",
+            "icon": "check_mark",
+            "row_content": "<p><em> Please contact our customer care team with your order ID, and we’ll assist you promptly.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_EUCR9y": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is your return/refund policy?",
+            "icon": "check_mark",
+            "row_content": "<p><em> We accept returns within 7 days of delivery only if the product is damaged, defective, or incorrect. Read Full Return Policy</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eVQUCk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What payment methods do you accept?",
+            "icon": "check_mark",
+            "row_content": "<p><em> We accept all major credit/debit cards, UPI, net banking, and wallet payments.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fa7C3L": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I apply a coupon code?",
+            "icon": "check_mark",
+            "row_content": "<p><em> You can enter your coupon code during checkout under the “Apply Coupon” section before making the payment.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8aUkhU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I’m an influencer/content creator. How can I collaborate with Myura?",
+            "icon": "check_mark",
+            "row_content": "<p><em> We’d love to hear from you! Please fill out our influencer collaboration form here: Collab with Us</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yiQfwW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does it take to see results with Ayurvedic products?",
+            "icon": "check_mark",
+            "row_content": "<p><em> Ayurveda works gently and naturally. You may start noticing benefits within 2–6 weeks of consistent usage, depending on your body and lifestyle.</em></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_NPzdPp",
+        "collapsible_row_QYT3yK",
+        "collapsible_row_VUxqEi",
+        "collapsible_row_N4zDNd",
+        "collapsible_row_zJEATN",
+        "collapsible_row_i4gFPN",
+        "collapsible_row_F7d849",
+        "collapsible_row_gUJrHP",
+        "collapsible_row_pQ9JEX",
+        "collapsible_row_UrECPr",
+        "collapsible_row_EUCR9y",
+        "collapsible_row_eVQUCk",
+        "collapsible_row_fa7C3L",
+        "collapsible_row_8aUkhU",
+        "collapsible_row_yiQfwW"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "slideshow_aKYAf4": {
+      "type": "slideshow",
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_7gKUgL",
+    "collapsible_content_geGJkC",
+    "main",
+    "slideshow_aKYAf4"
+  ]
+}
