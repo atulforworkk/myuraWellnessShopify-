@@ -1,0 +1,138 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_7gKUgL": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- Radiant Gradient Footer -->\n<footer class=\"gradient-footer\">\n  <div class=\"footer-center\">\n    <h2>About Us</h2>\n    <p>Because your wellness deserve more than maintenance .</p>\n    <p>--It deserve transformation</p>\n  </div>\n</footer>\n\n<style>\n.gradient-footer {\n  background: linear-gradient(135deg, #8cb697, #5c7f6f); /* Same radiant green gradient */\n  color: #fff;\n  text-align: center;\n  padding: 80px 20px;\n  font-family: 'Arial', sans-serif;\n}\n\n.gradient-footer h2 {\n  font-size: 36px;\n  font-weight: 700;\n  margin-bottom: 10px;\n  color: #fff; /* Ensures CONTACT is white */\n}\n\n.gradient-footer p {\n  font-size: 18px;\n  font-weight: 400;\n  opacity: 0.9;\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_jUTagH": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- ✅ How We're Different Section -->\n<section class=\"difference-section\" data-aos=\"fade-up\" data-aos-duration=\"1000\">\n  <div class=\"difference-container\">\n    <!-- Left Content -->\n    <div class=\"difference-text\">\n      <h2>How We’re Different</h2>\n      <p>\n        Our purpose-built formulations address real, everyday needs—be it energy, hormonal balance,\n        gut health, liver care, joint strength, vitality, or metabolic support. Thoughtfully dosed\n        for optimal absorption, our blends work in harmony with your lifestyle. We listen—your\n        feedback shapes our evolution, making your experience central to everything we do.\n      </p>\n      <h4>The Myura Standard</h4>\n      <p>\n        “New” does not mean untested. It means uncompromising. We launched only when our products\n        met the highest benchmarks: clean, effective, and responsibly made. If we wouldn’t give it\n        to our own family, it doesn’t carry the Myura name.\n      </p>\n    </div>\n\n    <!-- Right Features -->\n    <div class=\"difference-features\">\n      <div class=\"feature-card\">\n        <div class=\"feature-icon\">🌿</div>\n        <h3>100% Organic</h3>\n        <p>\n          We use only pure, certified organic ingredients — nothing artificial,\n          nothing unnecessary, just nature at its best.\n        </p>\n      </div>\n      <div class=\"feature-card\">\n        <div class=\"feature-icon\">❤️</div>\n        <h3>Improve Health</h3>\n        <p>\n          Formulated to boost energy, balance, and overall well-being,\n          so you feel healthier from the inside out.\n        </p>\n      </div>\n      <div class=\"feature-card\">\n        <div class=\"feature-icon\">⭐</div>\n        <h3>12K+ Ratings</h3>\n        <p>\n          Trusted by thousands of happy customers who have seen real results\n          in their wellness journey.\n        </p>\n      </div>\n      <div class=\"feature-card\">\n        <div class=\"feature-icon\">✔️</div>\n        <h3>Biologically Safe</h3>\n        <p>\n          Every blend is tested for safety and quality, so it’s as gentle\n          on your body as it is effective.\n        </p>\n      </div>\n    </div>\n  </div>\n</section>\n\n<style>\n/* ✅ Container Layout */\n.difference-section {\n  padding: 60px 20px;\n  background: #fff;\n  font-family: Arial, sans-serif;\n  color: #333;\n}\n\n.difference-container {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 40px;\n  max-width: 1200px;\n  margin: 0 auto;\n  align-items: start;\n}\n\n/* ✅ Left Text */\n.difference-text h2 {\n  font-size: 28px;\n  font-weight: 700;\n  margin-bottom: 15px;\n  color: #002b45;\n}\n\n.difference-text h4 {\n  margin-top: 20px;\n  font-weight: 600;\n}\n\n.difference-text p {\n  line-height: 1.6;\n  margin-bottom: 15px;\n  color: #555;\n}\n\n/* ✅ Feature Cards */\n.difference-features {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n}\n\n.feature-card {\n  background: #fff;\n  border-radius: 12px;\n  padding: 20px;\n  text-align: center;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.08);\n  transition: transform 0.3s ease;\n}\n\n.feature-card:hover {\n  transform: translateY(-5px);\n}\n\n.feature-icon {\n  font-size: 32px;\n  margin-bottom: 10px;\n}\n\n.feature-card h3 {\n  font-size: 18px;\n  font-weight: 600;\n  color: #002b45;\n  margin-bottom: 10px;\n}\n\n.feature-card p {\n  font-size: 14px;\n  color: #666;\n  line-height: 1.5;\n}\n\n/* ✅ Responsive */\n@media (max-width: 992px) {\n  .difference-container {\n    grid-template-columns: 1fr;\n  }\n  .difference-features {\n    grid-template-columns: 1fr 1fr;\n  }\n}\n\n@media (max-width: 600px) {\n  .difference-features {\n    grid-template-columns: 1fr;\n  }\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_mz4Bha": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- ✅ Why Choose Myura Section -->\n<section class=\"choose-section\" data-aos=\"fade-up\" data-aos-duration=\"1000\">\n  <div class=\"choose-container\">\n\n    <!-- Left Image -->\n    <div class=\"choose-image\">\n        <img src=\"{{ 'whyChooseMyuraImg.jpg' | asset_url }}\" alt=\"Why Choose Myura\" />\n    </div>\n\n    <!-- Right Content -->\n    <div class=\"choose-text\">\n      <h2>Why Choose Myura?</h2>\n      <p>\n        At Myura, we don’t just create wellness products—we craft care that’s personal, pure, and made just for you. Here’s why so many people trust us and feel good choosing us as their wellness partner:\n      </p>\n\n      <p><strong>Rooted in Real Tradition and Science:</strong> We blend ancient Ayurvedic wisdom with modern science to bring you natural solutions that actually work—backed by years of healing knowledge and today’s research.</p>\n\n      <p><strong>Complete Honesty, Always:</strong> We believe you have the right to know exactly what’s inside every bottle. No hidden ingredients, no confusing jargon—just clear, simple information you can trust.</p>\n\n      <p><strong>Quality You Can Feel:</strong> From carefully picked herbs to small-batch production with strict quality checks, we make sure every product meets our high standards because your health deserves the best care.</p>\n\n      <p><strong>Here for You, Every Step of the Way:</strong> We know wellness is a journey and it’s different for everyone. Our friendly team is always ready to listen, help, and support you—so you never have to do it alone.</p>\n\n      <p><strong>Wellness That Fits Your Life:</strong> Whether you need help with detox, energy, digestion, or joint support, our blends are thoughtfully crafted for your real, everyday needs—with ingredients designed to be absorbed and work well in your body.</p>\n    </div>\n  </div>\n</section>\n\n<style>\n.choose-section {\n  padding: 60px 20px;\n  background: #fff;\n  font-family: Arial, sans-serif;\n  color: #333;\n}\n.choose-container {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 50px;\n  max-width: 1200px;\n  margin: 0 auto;\n  align-items: center;\n}\n\n/* ✅ Left Image */\n.choose-image {\n  position: relative;\n  text-align: center;\n}\n.choose-image img {\n  width: 100%;\n  max-width: 400px;\n  border-radius: 20px;\n  display: block;\n  margin: auto;\n}\n\n/* ✅ Floating Cards */\n.floating-card {\n  position: relative;\n  background: #e8f5ec;\n  padding: 15px;\n  margin: 15px auto;\n  border-radius: 50px;\n  text-align: left;\n  max-width: 320px;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.1);\n}\n.floating-card h4 {\n  font-size: 15px;\n  font-weight: 600;\n  margin: 0 0 5px;\n  color: #002b45;\n}\n.floating-card p {\n  font-size: 13px;\n  color: #555;\n  margin: 0;\n}\n.floating-card .dot {\n  position: absolute;\n  right: 15px;\n  top: 50%;\n  transform: translateY(-50%);\n  background: #ff3366;\n  width: 14px;\n  height: 14px;\n  border-radius: 50%;\n}\n\n/* ✅ Right Text */\n.choose-text h2 {\n  font-size: 28px;\n  font-weight: 700;\n  margin-bottom: 15px;\n  color: #002b45;\n}\n.choose-text p {\n  line-height: 1.6;\n  margin-bottom: 15px;\n  color: #555;\n}\n.choose-text strong {\n  color: #002b45;\n}\n\n/* ✅ Responsive */\n@media (max-width: 992px) {\n  .choose-container {\n    grid-template-columns: 1fr;\n    text-align: center;\n  }\n  .choose-text {\n    text-align: left;\n  }\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_jDBHVx": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_brYwkQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Product",
+            "heading_size": "h1"
+          }
+        },
+        "text_E8D8wm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Myura, we’re here to make wellness simple for you. Our supplements are made with care to support both your body and mind — whether it’s for everyday health or specific needs. Think of them as a daily boost of balance, energy, and vitality you can rely on.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_b9h9ra": {
+          "type": "button",
+          "settings": {
+            "button_label": "Our Products",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_brYwkQ",
+        "text_E8D8wm",
+        "button_b9h9ra"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Our_Product_Optimized_Shopify_4.jpg",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "slideshow_aKYAf4": {
+      "type": "slideshow",
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "video_CRxTLK": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=tkZfN6ZPuBo",
+        "cover_image": "shopify://shop_images/Thumbnail_5-01_shopify_ready.jpg",
+        "description": "About Our Product",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 16
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_7gKUgL",
+    "custom_liquid_jUTagH",
+    "main",
+    "custom_liquid_mz4Bha",
+    "image_with_text_jDBHVx",
+    "slideshow_aKYAf4",
+    "video_CRxTLK"
+  ]
+}

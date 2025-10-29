@@ -1,0 +1,189 @@
+/* ===== Auth Pages (Login & Register) ===== */
+
+/* Hero section */
+.auth-hero {
+  background: linear-gradient(135deg, #8cb697, #5c7f6f);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.auth-hero h1 {
+  margin: 0 0 10px;
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.auth-hero p {
+  margin: 0;
+  opacity: .95;
+  font-size: 16px;
+}
+
+/* Wrapper + Card */
+.auth-wrapper {
+  max-width: 920px;
+  margin: -60px auto 48px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-card {
+  background: #fff;
+  color: #111;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  padding: 28px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+@media (min-width: 750px) {
+  .auth-card {
+    padding: 40px;
+  }
+}
+
+/* Headings inside card */
+.auth-card h2, .auth-card h3 {
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+
+/* ===== FIX Floating Labels ===== */
+.field__input-wrapper,
+.field__label {
+
+}
+
+/* Fields */
+.auth-card .field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-card .field label {
+  display: block;
+  /* margin-bottom: 6px; */
+  margin:8px;
+    font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.auth-card .field input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  font-size: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  background: #fff;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.auth-card .field input:focus {
+  border-color: #5c7f6f;
+  box-shadow: 0 0 0 3px rgba(92,127,111,.15);
+}
+
+/* Buttons */
+.button-primary,
+.auth-card button {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+  background: #5c7f6f;
+  color: #fff;
+  margin-top: 4px;
+}
+
+.button-primary:hover,
+.auth-card button:hover {
+  background: #4f6f62;
+  box-shadow: 0 6px 16px rgba(92,127,111,.25);
+}
+
+/* Ghost button */
+.button-ghost {
+  width: 100%;
+  background: transparent;
+  color: #5c7f6f;
+  border: 2px solid #5c7f6f;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.button-ghost:hover {
+  background: #5c7f6f;
+  color: #fff;
+}
+
+/* Links row */
+.auth-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.auth-links a {
+  text-align: center;
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  text-decoration: none;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.auth-links a:hover {
+  border-color: #5c7f6f;
+  color: #5c7f6f;
+}
+
+/* Messages */
+.form__message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f6faf8;
+  border: 1px solid #d9e6e1;
+  color: #2b4c40;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+}
+
+.form__message--error {
+  background: #fff6f6;
+  border-color: #f2c6c6;
+  color: #9b2c2c;
+}
+
+/* Small helper text */
+.muted {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Section padding keeps theme controls working */
+[class*="section-"][class*="-padding"] {
+  position: relative;
+}

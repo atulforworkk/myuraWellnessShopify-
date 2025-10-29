@@ -1,0 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_jM7JVR": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"legal-wrapper\">\n  <div class=\"legal-card\">\n    <h1>Return Policy</h1>\n    <div class=\"legal-page\">\n      <p>\n        At MYURA WELLNESS, we prioritise your satisfaction and are committed to delivering high-quality wellness solutions. \n        If you are not entirely satisfied with your purchase, we’re here to help, in accordance with the policy outlined below.\n      </p>\n\n      <h2>1. Return Eligibility</h2>\n      <p>Returns will be accepted only under the following conditions:</p>\n      <ul>\n        <li>The product is unused, unopened, and in its original packaging.</li>\n        <li>The return request is raised within 7 days from the date of delivery.</li>\n        <li>The product is accompanied by the original invoice or proof of purchase.</li>\n      </ul>\n\n      <h2>2. Non-Returnable Products</h2>\n      <p>The following products are not eligible for return:</p>\n      <ul>\n        <li>Opened or partially used products</li>\n        <li>Products that have been tampered with or damaged after delivery</li>\n        <li>Items purchased during promotional campaigns or sales (unless received in a damaged or defective condition)</li>\n        <li>Products returned without original packaging or invoice</li>\n      </ul>\n\n      <h2>3. Damaged or Incorrect Products</h2>\n      <p>\n        In case you receive a product that is damaged, defective, or different from what you ordered, please contact us within 48 hours of delivery. \n        We may request photographic evidence to initiate a replacement or refund.\n      </p>\n\n      <h2>4. Refunds</h2>\n      <p>\n        Once the returned product is received and inspected, a refund will be initiated to your original method of payment within 5–7 business days, \n        provided the return meets the above criteria. Refund timelines may vary depending on your bank or payment provider.\n      </p>\n\n      <h2>5. Return Shipping</h2>\n      <ul>\n        <li>If the return is due to a damaged, defective, or incorrect product, MYURA WELLNESS will bear the return shipping charges.</li>\n        <li>For all other eligible returns, the customer is responsible for the return shipping costs.</li>\n      </ul>\n\n      <h2>6. How to Initiate a Return</h2>\n      <p>\n        To initiate a return or report an issue with your order, please contact our support team at:\n      </p>\n      <p>\n        📧 Email: <a href=\"mailto:care@myurawellness.com\">care@myurawellness.com</a><br>\n        📞 Phone: +91-9133001177\n      </p>\n      <p>\n        Please include your order ID, reason for return, and supporting images (if applicable).\n      </p>\n\n      <p>\n        MYURA WELLNESS reserves the right to modify or update this policy at any time. \n        We encourage you to review this page periodically for any changes.\n      </p>\n\n      <p>\n        For any further assistance, feel free to reach out to our customer support team. \n        Your well-being and experience with MYURA remain our top priority.\n      </p>\n    </div>\n  </div>\n</div>\n\n<style>\n.legal-wrapper {\n  display: flex;\n  justify-content: center;\n  padding: 40px 15px;\n}\n\n.legal-card {\n  max-width: 900px;\n  width: 100%;\n  background: #fff;\n  border-radius: 12px;\n  box-shadow: 0 4px 15px rgba(0,0,0,0.08);\n  padding: 40px 30px;\n}\n\n.legal-card h1 {\n  font-size: 28px;\n  font-weight: 700;\n  margin-bottom: 28px;\n  color: #235C42;\n  text-align: left;\n}\n\n.legal-page h2 {\n  font-size: 20px;\n  font-weight: 600;\n  color: #235C42;\n  margin-top: 24px;\n  margin-bottom: 10px;\n  text-align: left;\n}\n\n.legal-page p, \n.legal-page li {\n  font-size: 16px;\n  color: #333;\n  line-height: 1.7;\n  margin-bottom: 12px;\n  text-align: left;\n}\n\n.legal-page ul {\n  margin-left: 20px;\n  list-style: disc;\n}\n\n.legal-page a {\n  color: #235C42;\n  text-decoration: none;\n  font-weight: 500;\n}\n\n.legal-page a:hover {\n  text-decoration: underline;\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "slideshow_aKYAf4": {
+      "type": "slideshow",
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_jM7JVR",
+    "main",
+    "slideshow_aKYAf4"
+  ]
+}

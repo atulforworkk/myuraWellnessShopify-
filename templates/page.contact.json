@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_6X6D3B": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- Radiant Gradient Footer -->\n<footer class=\"gradient-footer\">\n  <div class=\"footer-center\">\n    <h2>CONTACT</h2>\n    <p>Wellness you can feel, results you can see.</p>\n  </div>\n</footer>\n\n<style>\n.gradient-footer {\n  background: linear-gradient(135deg, #8cb697, #5c7f6f); /* Same radiant green gradient */\n  color: #fff;\n  text-align: center;\n  padding: 80px 20px;\n  font-family: 'Arial', sans-serif;\n}\n\n.gradient-footer h2 {\n  font-size: 36px;\n  font-weight: 700;\n  margin-bottom: 10px;\n  color: #fff; /* Ensures CONTACT is white */\n}\n\n.gradient-footer p {\n  font-size: 18px;\n  font-weight: 400;\n  opacity: 0.9;\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_D8YWba": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_xdBKVV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contact Info",
+            "heading_size": "h1"
+          }
+        },
+        "text_JBR8im": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Email</strong> - care@myurawellness.com</p><p><strong>Phone No</strong>- 9133001177</p><p><strong>Address</strong> - PLOT NO 15 C, IT PARK, Sector 22,  Panchkula, Haryana, 134109</p><p>You can also Contact us on our social media   </p><p></p>",
+            "text_style": "body"
+          }
+        },
+        "button_k3HKrm": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_xdBKVV",
+        "text_JBR8im",
+        "button_k3HKrm"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Contact_-4_2.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_dJttE4": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"contact-info-section\" data-aos=\"fade-up\" data-aos-duration=\"1000\">\n  <div class=\"contact-info-wrapper\">\n    \n    <!-- Left side image -->\n    <div class=\"contact-image\">\n      <img src=\"{{ 'Contact.png' | asset_url }}\" alt=\"Contact Support\" />\n    </div>\n    \n    <!-- Right side details -->\n    <div class=\"contact-details\">\n      <h2>Contact Info</h2>\n      \n      <p><strong>Email:</strong> <a href=\"mailto:care@myurawellness.com\">care@myurawellness.com</a></p>\n      <p><strong>Phone No:</strong> <a href=\"tel:+919133001177\">+91 91330 01177</a></p>\n      <p><strong>Address:</strong> PLOT NO 15 C, IT PARK, Sector 22, Panchkula, Haryana, 134109</p>\n      <p><strong>Working Hour:</strong> Monday to Saturday, 10:00 AM-7:00 PM</p>\n      <!-- Social Media Icons -->\n      <div class=\"social-icons\">\n        <p>\n          <strong>Our Social Media </strong>\n        </p>\n        <a href=\"https://www.facebook.com/myurawellness\" target=\"_blank\" aria-label=\"Facebook\">\n          <i class=\"fab fa-facebook-f\"></i>\n        </a>\n        <a href=\"https://www.instagram.com/myurawellness/\" target=\"_blank\" aria-label=\"Instagram\">\n          <i class=\"fab fa-instagram\"></i>\n        </a>\n        <!-- <a href=\"https://wa.me/919133001177\" target=\"_blank\" aria-label=\"WhatsApp\">\n          <i class=\"fab fa-whatsapp\"></i>\n        </a> -->\n        <a href=\"https://www.youtube.com/@MyuraWellness\" target=\"_blank\" aria-label=\"YouTube\">\n          <i class=\"fab fa-youtube\"></i>\n        </a>\n      </div>\n    </div>\n  </div>\n</div>\n\n<style>\n.contact-info-section {\n  background: #fdfdf8; /* light background */\n  padding: 40px 20px;\n  border-radius: 12px;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.05);\n  max-width: 1000px;\n  margin: 40px auto;\n}\n\n.contact-info-wrapper {\n  display: flex;\n  align-items: center;\n  gap: 40px;\n  flex-wrap: wrap;\n}\n\n.contact-image img {\n  max-width: 220px;\n  max-height: 300px;\n  border-radius: 12px;\n}\n\n.contact-details {\n  flex: 1;\n  font-size: 16px;\n  color: #333;\n}\n\n.contact-details h2 {\n  font-size: 24px;\n  margin-bottom: 20px;\n  font-weight: 600;\n  color: #222;\n}\n\n.contact-details p {\n  margin: 8px 0;\n  line-height: 1.6;\n}\n\n.contact-details a {\n  color: #1a7f5a; /* brand green */\n  text-decoration: none;\n  font-weight: 500;\n}\n\n.contact-details a:hover {\n  text-decoration: underline;\n}\n\n.social-icons {\n  margin-top: 20px;\n  display: flex;\n  gap: 15px;\n}\n\n.social-icons a {\n  font-size: 22px;\n  color: #1a7f5a;\n  transition: color 0.3s ease;\n}\n\n.social-icons a:hover {\n  color: #0e4c36;\n}\n</style>\n\n  <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css\" rel=\"stylesheet\">",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_6X6D3B",
+    "form",
+    "image_with_text_D8YWba",
+    "custom_liquid_dJttE4"
+  ]
+}

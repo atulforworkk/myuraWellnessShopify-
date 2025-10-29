@@ -1,0 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_kpHPbK": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"legal-wrapper\">\n  <div class=\"legal-card\">\n    <h1>Brand Directory</h1>\n    <div class=\"legal-page\">\n\n      <h2>About MYURA</h2>\n      <p>\n        <strong>MYURA WELLNESS</strong> blends ancient Ayurvedic wisdom with modern clinical research\n        to deliver personalized wellness solutions. Our formulations are science-backed, FSSAI-compliant,\n        and made using standardized herbal extracts and nutraceutical bioactives.\n      </p>\n\n      <h2>Product Categories</h2>\n      <ul class=\"two-col-list\">\n        <li>Men's Vitality Booster</li>\n        <li>Women's Health Plus</li>\n        <li>Daily Ayurvedic Multivitamins</li>\n        <li>Gut and Digestion Support</li>\n        <li>Bone and Joint Support</li>\n        <li>Shilajit Gold Resins</li>\n        <li>Omega-3 Plant-Based</li>\n        <li>Liver Detox Formula</li>\n        <li>Diabetes Management</li>\n      </ul>\n\n      <h2>Our Philosophy</h2>\n      <p>\n        We believe wellness starts from within. That’s why every <strong>MYURA</strong> product is designed\n        to heal, energize, and restore balance—without harmful additives.\n      </p>\n\n      <h2>Quick Links</h2>\n      <ul class=\"two-col-list\">\n        <li><a href=\"/pages/terns-and-conditions\">Terms & Conditions</a></li>\n        <li><a href=\"/pages/privacy-policy\">Privacy Policy</a></li>\n        <li><a href=\"/pages/return-policy\">Return & Refund Policy</a></li>\n        <li><a href=\"/pages/disclaimer\">Disclaimer</a></li>\n        <li><a href=\"/pages/faqs\">FAQs</a></li>\n        <li><a href=\"/pages/contact\">Contact Us</a></li>\n      </ul>\n\n      <h2>Customer Support</h2>\n      <div class=\"support\">\n        <p>📧 care@myurawellness</p>\n        <p>📞 +91-9133001177</p>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<style>\n.legal-wrapper {\n  display: flex;\n  justify-content: center;\n  padding: 40px 15px;\n}\n\n.legal-card {\n  max-width: 900px;\n  width: 100%;\n  background: #fff;\n  border-radius: 12px;\n  box-shadow: 0 4px 15px rgba(0,0,0,0.08);\n  padding: 40px 30px;\n}\n\n.legal-card h1 {\n  font-size: 28px;\n  font-weight: 700;\n  margin-bottom: 28px;\n  color: #235C42;\n  text-align: left;\n}\n\n.legal-page h2 {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 32px 0 14px;\n  color: #34495e;\n  text-align: left;\n}\n\n.legal-page p {\n  font-size: 16px;\n  color: #333;\n  line-height: 1.7;\n  margin-bottom: 18px;\n  text-align: left;\n}\n\n.legal-page ul {\n  margin: 0 0 20px;\n  padding-left: 1.2em;\n}\n\n.legal-page li {\n  margin-bottom: 8px;\n}\n\n.legal-page a {\n  color: #235C42;\n  text-decoration: none;\n}\n\n.legal-page a:hover {\n  text-decoration: underline;\n}\n\n/* Two-column lists on mobile */\n@media (max-width: 768px) {\n  .two-col-list {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: 10px 20px;\n    list-style: none;\n    padding-left: 0;\n  }\n\n  .two-col-list li {\n    margin-bottom: 0;\n  }\n\n  /* Customer support side-by-side */\n  .support {\n    display: flex;\n    gap: 20px;\n    flex-wrap: wrap;\n  }\n}\n\n/* One column on very small screens */\n@media (max-width: 480px) {\n  .two-col-list {\n    grid-template-columns: 1fr;\n  }\n\n  .support {\n    flex-direction: column;\n    gap: 5px;\n  }\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "slideshow_aKYAf4": {
+      "type": "slideshow",
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_kpHPbK",
+    "main",
+    "slideshow_aKYAf4"
+  ]
+}
