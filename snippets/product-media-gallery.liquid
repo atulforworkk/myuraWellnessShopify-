@@ -199,14 +199,14 @@
           const imageContainer = document.createElement('div');
           imageContainer.style.cssText = `
             position: relative;
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 100%;
+            max-height: 100%;
             width: 100%;
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 0;
             box-sizing: border-box;
           `;
           
@@ -318,6 +318,11 @@
           overlay.addEventListener('click', function(e) {
             if (e.target === overlay) closeZoom();
           });
+          // Close on tap of black backdrop (mobile)
+          overlay.addEventListener('touchend', function(e) {
+            if (e.touches && e.touches.length > 0) return;
+            if (e.target === overlay) closeZoom();
+          });
           
           // Keyboard navigation
           document.addEventListener('keydown', function(e) {
@@ -335,11 +340,18 @@
           let currentScale = 1;
           let currentTranslateX = 0;
           let currentTranslateY = 0;
+          let panStartX = 0;
+          let panStartY = 0;
+          let startTranslateX = 0;
+          let startTranslateY = 0;
           
           overlay.addEventListener('touchstart', function(e) {
             if (e.touches.length === 1) {
-              startX = e.touches[0].clientX;
-              startY = e.touches[0].clientY;
+              // begin pan gesture
+              panStartX = e.touches[0].clientX;
+              panStartY = e.touches[0].clientY;
+              startTranslateX = currentTranslateX;
+              startTranslateY = currentTranslateY;
             } else if (e.touches.length === 2) {
               // Pinch gesture - stable setup
               const distance = Math.sqrt(
@@ -363,7 +375,7 @@
           
           overlay.addEventListener('touchmove', function(e) {
             if (e.touches.length === 2) {
-              // Pinch zoom - controlled and smooth
+              // Pinch zoom - controlled and clamped to screen
               e.preventDefault();
               const distance = Math.sqrt(
                 Math.pow(e.touches[0].clientX - e.touches[1].clientX, 2) +
@@ -371,40 +383,70 @@
               );
               
               if (initialDistance > 0) {
-                // More controlled zoom with damping
+                // Exact scale based on pinch factor, clamped
                 const scaleFactor = distance / initialDistance;
-                const rawScale = Math.max(0.5, Math.min(5, scaleFactor));
-                
-                // Add damping to prevent extreme zoom
-                const damping = 0.3;
-                const scale = 1 + (rawScale - 1) * damping;
-                currentScale = Math.max(0.8, Math.min(3, scale));
+                currentScale = Math.max(1, Math.min(3, scaleFactor));
                 
                 const zoomImg = overlay.querySelector('#zoom-carousel-image');
                 if (zoomImg) {
                   // Center the zoom properly
                   zoomImg.style.transformOrigin = 'center center';
-                  zoomImg.style.transform = `scale(${currentScale}) translate(${currentTranslateX}px, ${currentTranslateY}px)`;
+                  // translate first, then scale to keep panning linear
+                  // Clamp translate to keep image within screen
+                  const overlayW = overlay.clientWidth;
+                  const overlayH = overlay.clientHeight;
+                  let imgW = zoomImg.naturalWidth || zoomImg.clientWidth;
+                  let imgH = zoomImg.naturalHeight || zoomImg.clientHeight;
+                  const imgAspect = imgW / imgH;
+                  const overlayAspect = overlayW / overlayH;
+                  if (overlayAspect > imgAspect) {
+                    imgH = overlayH;
+                    imgW = imgH * imgAspect;
+                  } else {
+                    imgW = overlayW;
+                    imgH = imgW / imgAspect;
+                  }
+                  const maxTranslateX = Math.max(0, (imgW * currentScale - overlayW) / 2);
+                  const maxTranslateY = Math.max(0, (imgH * currentScale - overlayH) / 2);
+                  currentTranslateX = Math.max(-maxTranslateX, Math.min(maxTranslateX, currentTranslateX));
+                  currentTranslateY = Math.max(-maxTranslateY, Math.min(maxTranslateY, currentTranslateY));
+                  zoomImg.style.transform = `translate(${currentTranslateX}px, ${currentTranslateY}px) scale(${currentScale})`;
                   zoomImg.style.transition = 'none';
                 }
               }
-            } else if (e.touches.length === 1 && currentScale > 1.1) {
-              // Pan when zoomed - with reduced sensitivity
+            } else if (e.touches.length === 1 && currentScale > 1.01) {
+              // Pan when zoomed - incremental, clamped
               e.preventDefault();
               const touch = e.touches[0];
-              const deltaX = (touch.clientX - startX) * 0.6; // Slightly increased sensitivity
-              const deltaY = (touch.clientY - startY) * 0.6; // Slightly increased sensitivity
+              const deltaX = (touch.clientX - panStartX) * 0.6; // sensitivity
+              const deltaY = (touch.clientY - panStartY) * 0.6;
               
               // Constrain panning to keep image within bounds
-              const maxTranslateX = (overlay.offsetWidth * (currentScale - 1)) / 2;
-              const maxTranslateY = (overlay.offsetHeight * (currentScale - 1)) / 2;
-              
-              currentTranslateX = Math.max(-maxTranslateX, Math.min(maxTranslateX, deltaX));
-              currentTranslateY = Math.max(-maxTranslateY, Math.min(maxTranslateY, deltaY));
-              
               const zoomImg = overlay.querySelector('#zoom-carousel-image');
+              const overlayW = overlay.clientWidth;
+              const overlayH = overlay.clientHeight;
+              let imgW = zoomImg ? (zoomImg.naturalWidth || zoomImg.clientWidth) : overlayW;
+              let imgH = zoomImg ? (zoomImg.naturalHeight || zoomImg.clientHeight) : overlayH;
+              // Effective displayed dimensions when scaled to contain
+              const imgAspect = imgW / imgH;
+              const overlayAspect = overlayW / overlayH;
+              if (overlayAspect > imgAspect) {
+                // limited by height
+                imgH = overlayH;
+                imgW = imgH * imgAspect;
+              } else {
+                imgW = overlayW;
+                imgH = imgW / imgAspect;
+              }
+              const maxTranslateX = Math.max(0, (imgW * currentScale - overlayW) / 2);
+              const maxTranslateY = Math.max(0, (imgH * currentScale - overlayH) / 2);
+              
+              currentTranslateX = Math.max(-maxTranslateX, Math.min(maxTranslateX, startTranslateX + deltaX));
+              currentTranslateY = Math.max(-maxTranslateY, Math.min(maxTranslateY, startTranslateY + deltaY));
+              
               if (zoomImg) {
-                zoomImg.style.transform = `scale(${currentScale}) translate(${currentTranslateX}px, ${currentTranslateY}px)`;
+                // translate first, then scale
+                zoomImg.style.transform = `translate(${currentTranslateX}px, ${currentTranslateY}px) scale(${currentScale})`;
                 zoomImg.style.transition = 'none';
               }
             }
@@ -651,12 +693,12 @@
     
     /* Better image alignment and sizing */
     #zoom-carousel-image {
-      max-width: 80% !important;
-      max-height: 80% !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
       width: auto !important;
       height: auto !important;
       object-fit: contain !important;
-      transition: transform 0.3s ease !important;
+      transition: transform 0.2s ease-out !important;
       transform-origin: center center !important;
       will-change: transform !important;
       touch-action: none !important;
@@ -673,8 +715,8 @@
     /* Mobile image sizing */
     @media (max-width: 768px) {
       #zoom-carousel-image {
-        max-width: 90% !important;
-        max-height: 90% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
       }
     }
     .product-thumbs {
